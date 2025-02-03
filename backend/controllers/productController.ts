@@ -5,7 +5,6 @@ const db = require('../models');
 
 export const createProduct = async (req: Request, res: Response) => {
     try {
-        console.log("Hello");
         const { name, category, price } = req.body;
         const newProduct = await db.Product.create({ name, category, price });
         res.status(201).json(newProduct);
